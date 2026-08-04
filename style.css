@@ -83,22 +83,22 @@ section {
 }
 
 
+/* Perpetua Titling MT Std Light */
+
 @font-face {
-    font-family: "Perpetua Titling MT";
-    src: url("/Assets/fonts/PerpetuaTitlingMT.woff2") format("woff2"),
-        url("/Assets/fonts/PerpetuaTitlingMT.woff") format("woff"),
-        url("/Assets/fonts/PerpetuaTitlingMT.ttf") format("truetype"),
-        url("/Assets/fonts/PerpetuaTitlingMT.otf") format("opentype");
-    font-weight: normal;
+    font-family: "Perpetua Titling MT Std Light";
+    src: url("/Assets/fonts/Perpetua%20Titling%20MT%20Std%20Light.woff2") format("woff2"),
+        url("/Assets/fonts/Perpetua%20Titling%20MT%20Std%20Light.woff") format("woff"),
+        url("/Assets/fonts/Perpetua%20Titling%20MT%20Std%20Light.ttf") format("truetype"),
+        url("/Assets/fonts/Perpetua%20Titling%20MT%20Std%20Light.otf") format("opentype");
+    font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
 
-.font-perpetua {
-    font-family: "Perpetua Titling MT", serif;
-    font-weight: 100;
+.font-perpetua-light {
+    font-family: "Perpetua Titling MT Std Light", serif;
 }
-
 
 @font-face {
     font-family: "Vissa";

@@ -2,283 +2,141 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wedding Invitation</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Wedding Gallery</title>
 
-    <style>
-        body {
-            overflow-x: hidden;
-        }
-
-        .hero-image {
-            animation: zoomFloat 18s ease-in-out infinite alternate;
-        }
-
-        @keyframes zoomFloat {
-            0% {
-                transform: scale(1);
-            }
-
-            100% {
-                transform: scale(1.08);
-            }
-        }
-
-        .fade-overlay {
-            background: linear-gradient(to top,
-                    rgba(0, 0, 0, .55),
-                    rgba(0, 0, 0, .15),
-                    transparent 60%);
-        }
-
-        .scroll-arrow {
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(8px);
-            }
-        }
-
-        .scroll-wheel {
-            width: 4px;
-            height: 10px;
-            border-radius: 999px;
-            background: #fff;
-            margin-top: 8px;
-            animation: wheelMove 1.8s ease-in-out infinite;
-        }
-
-        @keyframes wheelMove {
-
-            0% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-            70% {
-                transform: translateY(14px);
-                opacity: .2;
-            }
-
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-        }
-
-        .arrow-down {
-            animation: arrowMove 1.8s ease-in-out infinite;
-        }
-
-        @keyframes arrowMove {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(8px);
-            }
-
-        }
-
-        body.page-leave {
-            opacity: 0;
-            transform: scale(1.05);
-            filter: blur(8px);
-        }
-
-        /* Mouse Wheel */
-        .scroll-wheel {
-            width: 4px;
-            height: 10px;
-            border-radius: 999px;
-            background: #fff;
-            margin-top: 8px;
-            animation: scrollWheel 1.8s ease-in-out infinite;
-        }
-
-        @keyframes scrollWheel {
-
-            0% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-            70% {
-                transform: translateY(14px);
-                opacity: .2;
-            }
-
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-        }
-
-        .page-transition {
-            transition: transform 1s cubic-bezier(.22, 1, .36, 1),
-                opacity 1s ease;
-        }
-
-        .page-transition.leave {
-            transform: translateY(-100vh);
-            opacity: 0;
-        }
-
-        /* Mouse Wheel */
-        .scroll-wheel {
-            width: 4px;
-            height: 10px;
-            margin-top: 8px;
-            border-radius: 999px;
-            background: #fff;
-            animation: scrollWheel 1.8s ease-in-out infinite;
-        }
-
-        @keyframes scrollWheel {
-
-            0% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-            70% {
-                transform: translateY(14px);
-                opacity: .2;
-            }
-
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
-<body>
+<body class="bg-[#F6F5EF] overflow-hidden">
 
     <section class="relative w-screen h-screen overflow-hidden">
 
-        <!-- Background Image -->
-        <img src="/Assets/img.jpg" class="hero-image absolute inset-0 w-full h-full object-cover" alt="Wedding Couple">
+        <img src="/Assets/Gradient.png" alt="Background" class="absolute
+           -top-8
+           left-1/2
+           -translate-x-1/2
+           w-[120%]
+           max-w-[1200px]
+           md:max-w-[1400px]
+           lg:max-w-[1600px]
+           h-auto
+           object-contain
+           pointer-events-none
+           select-none
+           -z-10">
 
-        <!-- Overlay -->
-        <div class="fade-overlay absolute inset-0"></div>
+        <style>
+            .hero-gradient {
+                position: absolute;
+                top: -40px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: min(1400px, 110%);
+                height: auto;
+                pointer-events: none;
+                user-select: none;
+                z-index: -1;
+            }
+        </style>
 
-        <!-- Bottom Content -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-full px-8 text-center z-20">
+        <!-- Flower Circle -->
+        <div class="absolute top-6 sm:top-8 md:top-10 left-1/2 -translate-x-1/2">
 
-            <!-- Decorative Line -->
-            <div class="flex items-center justify-center gap-4 mb-6">
+            <!-- Flower -->
+            <img src="/Assets/Round Flowers.png" class="flower-circle
+           w-[105vw]
+           max-w-[820px]
+           animate-float" alt="Flower Circle">
 
-                <span class="w-12 h-px bg-white/60"></span>
+            <!-- Center Text -->
+            <div class="animate-fade-in absolute inset-0 flex flex-col items-center justify-center text-center">
 
-                <!-- Muse / Sparkles Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white/90" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="1.8">
+                <h1 class="font-perpetua-light
+               uppercase
+               text-[#6F7752]
+               text-[30px]
+               sm:text-[38px]
+               md:text-[48px]
+               lg:text-[56px]
+               leading-[1.08]">
 
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M12 3l1.8 4.5L18 9l-4.2 1.5L12 15l-1.8-4.5L6 9l4.2-1.5L12 3z" />
+                    STANLY
+                    <br>
+                    JOHNSON
 
-                </svg>
+                </h1>
 
-                <span class="w-12 h-px bg-white/60"></span>
+                <p class="font-caslon
+               italic
+               text-[#6F7752]
+               text-lg
+               sm:text-xl
+               my-4">
+
+                    with
+
+                </p>
+
+                <h1 class="font-perpetua-light
+               uppercase
+               text-[#6F7752]
+               text-[30px]
+               sm:text-[38px]
+               md:text-[48px]
+               lg:text-[56px]
+               leading-[1.08]">
+
+                    KEZIYAMOL
+                    <br>
+                    AJU
+
+                </h1>
 
             </div>
 
-            <!-- Paragraph -->
-            <p class="text-white/90
-              max-w-[320px]
-              mx-auto
-              leading-7
-              text-base
-              italic" style="font-family:'Adobe Caslon Pro', serif;">
+        </div>
 
-                The Lord has written our story with love and grace. We joyfully invite you to celebrate His blessings as
-                we begin our forever together.
+        <!-- Tap -->
+        <div id="tapOpen"
+            class="absolute bottom-16 left-1/2 -translate-x-1/2 flex flex-col items-center cursor-pointer">
+
+            <img src="/Assets/tap.png" class="w-8 tap-animation" alt="Tap">
+
+            <p class="font-avenir
+                   text-[#6F7752]
+                   text-2xl
+                   mt-4">
+
+                Tap to Open
 
             </p>
-
-
-
-
-
-            <!-- Scroll Indicator -->
-            <div id="scrollDown" class="flex flex-col items-center mt-6 cursor-pointer">
-
-                <div class="w-8 h-12 rounded-full border border-white/70 flex justify-center">
-                    <span class="scroll-wheel"></span>
-                </div>
-
-            </div>
-
-            <script>
-                let redirected = false;
-
-                // Desktop (mouse wheel)
-                window.addEventListener("wheel", function (e) {
-                    if (redirected) return;
-
-                    if (e.deltaY > 30) {
-                        redirected = true;
-
-                        // Small delay for a smoother feel
-                        setTimeout(() => {
-                            window.location.href = "home.html";
-                        }, 300);
-                    }
-                }, { passive: true });
-
-                // Mobile (swipe up)
-                let startY = 0;
-
-                window.addEventListener("touchstart", function (e) {
-                    startY = e.touches[0].clientY;
-                }, { passive: true });
-
-                window.addEventListener("touchend", function (e) {
-                    if (redirected) return;
-
-                    const endY = e.changedTouches[0].clientY;
-
-                    if (startY - endY > 60) {
-                        redirected = true;
-
-                        setTimeout(() => {
-                            window.location.href = "home.html";
-                        }, 300);
-                    }
-                }, { passive: true });
-            </script>
-
-
-
-
-
-
-
-
-
 
         </div>
 
     </section>
+
+    <script>
+
+        document.getElementById("tapOpen").onclick = () => {
+
+            document.body.classList.add("page-leave");
+
+            setTimeout(() => {
+
+                window.location.href = "home.html";
+
+            }, 900);
+
+        }
+
+    </script>
 
 </body>
 

@@ -1,0 +1,422 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #dfe1da;
+    color: #6f7954;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+section {
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+/* =========================================
+   FONTS
+   ========================================= */
+
+@font-face {
+    font-family: "ACaslonPro";
+    src: url("/Assets/fonts/ACaslonPro-Regular.woff2") format("woff2"),
+        url("/Assets/fonts/ACaslonPro-Regular.woff") format("woff"),
+        url("/Assets/fonts/ACaslonPro-Regular.ttf") format("truetype"),
+        url("/Assets/fonts/ACaslonPro-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "AvenirLT";
+    src: url("/Assets/fonts/AvenirLT-Regular.woff2") format("woff2"),
+        url("/Assets/fonts/AvenirLT-Regular.woff") format("woff"),
+        url("/Assets/fonts/AvenirLT-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Utility classes actually used in the markup.
+   (Previously "caslon" / "avenir" were referenced in the HTML
+   but never defined here, so all body copy silently fell back
+   to the browser default font on every screen size.) */
+.caslon,
+.acaslon,
+.font-caslon {
+    font-family: "ACaslonPro", "Adobe Caslon Pro", Georgia, serif;
+}
+
+.avenir {
+    font-family: "AvenirLT", Avenir, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* =========================================
+   FLUID TYPE HELPERS
+   Using clamp() instead of relying only on Tailwind's fixed
+   breakpoint jumps keeps text from overflowing very narrow
+   phones (320–360px) while still scaling up nicely on desktop.
+   ========================================= */
+
+.fluid-verse {
+    font-size: clamp(1rem, 3.6vw, 1.875rem);
+}
+
+.fluid-verse-ref {
+    font-size: clamp(0.9rem, 2.8vw, 1.5rem);
+}
+
+.fluid-parent-name {
+    font-size: clamp(1.25rem, 5.5vw, 3rem);
+}
+
+.fluid-parent-address {
+    font-size: clamp(0.85rem, 2.6vw, 1.5rem);
+}
+
+.fluid-invite-copy {
+    font-size: clamp(1rem, 3.2vw, 1.875rem);
+}
+
+.fluid-couple-name {
+    font-size: clamp(1.75rem, 8vw, 4.5rem);
+    line-height: 1.1;
+    word-break: break-word;
+}
+
+.fluid-and {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+.fluid-daughter-line {
+    font-size: clamp(0.95rem, 2.8vw, 1.5rem);
+}
+
+.fluid-address-line {
+    font-size: clamp(0.8rem, 2.4vw, 1.5rem);
+}
+
+.fluid-countdown-title {
+    font-size: clamp(0.95rem, 3vw, 1.125rem);
+}
+
+.fluid-countdown-number {
+    font-size: clamp(1.5rem, 7vw, 2.125rem);
+}
+
+.fluid-compliments {
+    font-size: clamp(1.25rem, 4.5vw, 1.75rem);
+}
+
+.fluid-signatures {
+    font-size: clamp(1rem, 3.2vw, 1.25rem);
+}
+
+.fluid-rsvp-title {
+    font-size: clamp(2rem, 8vw, 3.75rem);
+}
+
+.fluid-rsvp-sub {
+    font-size: clamp(1rem, 3.2vw, 1.5rem);
+}
+
+/* =========================================
+   CLOUDS
+   Sized in vw with sane min/max so they never
+   force horizontal scroll on small screens.
+   ========================================= */
+
+.cloud-img {
+    position: absolute;
+    top: -40px;
+    width: clamp(260px, 60vw, 850px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.cloud-left {
+    left: clamp(-40px, -8vw, 0px);
+}
+
+.cloud-right {
+    right: clamp(-40px, -8vw, 0px);
+}
+
+@media (min-width: 768px) {
+    .cloud-img {
+        top: -80px;
+    }
+
+    .cloud-left {
+        left: -120px;
+    }
+
+    .cloud-right {
+        right: -120px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cloud-left {
+        left: -220px;
+    }
+
+    .cloud-right {
+        right: -220px;
+    }
+}
+
+@keyframes cloudLeft {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    25% {
+        transform: translateX(20px) translateY(-6px);
+    }
+
+    50% {
+        transform: translateX(40px) translateY(4px);
+    }
+
+    75% {
+        transform: translateX(20px) translateY(-3px);
+    }
+
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes cloudRight {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    25% {
+        transform: translateX(-20px) translateY(5px);
+    }
+
+    50% {
+        transform: translateX(-40px) translateY(-5px);
+    }
+
+    75% {
+        transform: translateX(-20px) translateY(3px);
+    }
+
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+.animate-cloud-left {
+    animation: cloudLeft 18s ease-in-out infinite alternate;
+}
+
+.animate-cloud-right {
+    animation: cloudRight 22s ease-in-out infinite alternate;
+}
+
+/* =========================================
+   LEAVES
+   (HTML previously used class="leaf" which had
+   no matching rule anywhere — leaves never animated.
+   Now targeted correctly as .leaf-left / .leaf-right,
+   sized responsively, and kept clear of the text column.)
+   ========================================= */
+
+.leaf-img {
+    position: absolute;
+    width: clamp(2.5rem, 6vw, 6rem);
+    z-index: 5;
+}
+
+.leaf-left {
+    top: 29%;
+    left: clamp(-0.5rem, 1vw, 1rem);
+    transform-origin: left center;
+    animation: leafLeft 5s ease-in-out infinite;
+    will-change: transform;
+}
+
+.leaf-right {
+    top: 62%;
+    right: clamp(-0.5rem, 1vw, 1rem);
+    transform-origin: right center;
+    animation: leafRight 6s ease-in-out infinite;
+    will-change: transform;
+}
+
+@keyframes leafLeft {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-4deg);
+    }
+
+    50% {
+        transform: rotate(2deg);
+    }
+
+    75% {
+        transform: rotate(-3deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes leafRight {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(4deg);
+    }
+
+    50% {
+        transform: rotate(-2deg);
+    }
+
+    75% {
+        transform: rotate(3deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.center-leaf {
+    transform-origin: center bottom;
+    animation: centerLeaf 5s ease-in-out infinite;
+    will-change: transform;
+}
+
+@keyframes centerLeaf {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+
+    20% {
+        transform: translateY(-4px) rotate(-3deg) scale(1.02);
+    }
+
+    40% {
+        transform: translateY(-8px) rotate(2deg) scale(1.04);
+    }
+
+    60% {
+        transform: translateY(-4px) rotate(-2deg) scale(1.02);
+    }
+
+    80% {
+        transform: translateY(-2px) rotate(1deg) scale(1.01);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+}
+
+/* =========================================
+   FADE-IN (invitation image)
+   ========================================= */
+
+.animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.03);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* =========================================
+   COUNTDOWN
+   Grid stays 4-across down to very small phones;
+   number size scales with clamp so 320px screens
+   never overflow the pill.
+   ========================================= */
+
+.countdown-pill {
+    border-radius: 9999px;
+    background: #cdd3c3;
+    padding: clamp(0.9rem, 3vw, 1.5rem) clamp(0.5rem, 3vw, 1rem);
+}
+
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(0.25rem, 1.5vw, 0.75rem);
+}
+
+.countdown-grid>div+div {
+    border-left: 1px solid #b8bea3;
+}
+
+/* =========================================
+   RSVP BUTTONS
+   Prevent "Call" / "WhatsApp" labels from wrapping
+   or overflowing their pill on narrow screens.
+   ========================================= */
+
+.rsvp-buttons a {
+    white-space: nowrap;
+    font-size: clamp(0.95rem, 3.5vw, 1.25rem);
+    padding-top: clamp(0.65rem, 2vw, 0.9rem);
+    padding-bottom: clamp(0.65rem, 2vw, 0.9rem);
+}
+
+
+#verse::after {
+    content: "|";
+    animation: blink .8s infinite;
+    color: #7D8665;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}

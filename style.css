@@ -96,6 +96,7 @@ section {
 
 .font-perpetua {
     font-family: "Perpetua Titling MT", serif;
+    font-weight: 100;
 }
 
 
@@ -724,5 +725,40 @@ section {
     .invitation-float,
     [data-lucide="phone-call"] {
         animation: none !important;
+    }
+}
+
+/* Fade In */
+.invitation-fade {
+    opacity: 0;
+    animation:
+        invitationFade 1.8s ease-out forwards,
+        invitationFloat 8s ease-in-out infinite 1.8s;
+}
+
+@keyframes invitationFade {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating Animation */
+@keyframes invitationFloat {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }

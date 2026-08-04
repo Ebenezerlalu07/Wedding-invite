@@ -327,16 +327,23 @@ section {
 }
 
 .leaf-left {
-    top: 29%;
-    left: clamp(-0.5rem, 1vw, 1rem);
+    position: absolute;
+    top: 33%;
+    left: clamp(-3rem, -5vw, 1rem);
+
+    width: clamp(90px, 10vw, 180px);
+    /* Increased size */
+
     transform-origin: left center;
     animation: leafLeft 5s ease-in-out infinite;
     will-change: transform;
 }
 
 .leaf-right {
-    top: 62%;
-    right: clamp(-0.5rem, 1vw, 1rem);
+    top: 75%;
+
+    width: clamp(90px, 10vw, 180px);
+    right: clamp(-0.5rem, -10vw, 1rem);
     transform-origin: right center;
     animation: leafRight 6s ease-in-out infinite;
     will-change: transform;

@@ -93,6 +93,41 @@
             }
 
         }
+
+        body.page-leave {
+            opacity: 0;
+            transform: scale(1.05);
+            filter: blur(8px);
+        }
+
+        /* Mouse Wheel */
+        .scroll-wheel {
+            width: 4px;
+            height: 10px;
+            border-radius: 999px;
+            background: #fff;
+            margin-top: 8px;
+            animation: scrollWheel 1.8s ease-in-out infinite;
+        }
+
+        @keyframes scrollWheel {
+
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            70% {
+                transform: translateY(14px);
+                opacity: .2;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+        }
     </style>
 
 </head>
@@ -136,9 +171,8 @@
               text-base
               italic" style="font-family:'Adobe Caslon Pro', serif;">
 
-                Every beautiful journey begins with a single step.
-                We warmly invite you to scroll down and celebrate
-                our love story.
+                The Lord has written our story with love and grace. We joyfully invite you to celebrate His blessings as
+                we begin our forever together.
 
             </p>
 
@@ -149,14 +183,53 @@
             <!-- Scroll Indicator -->
             <div id="scrollDown" class="flex flex-col items-center mt-6 select-none">
 
-                <!-- Mouse -->
-                <a href="/home.html">
-                    <div class="w-8 h-12 rounded-full border border-white/70 flex justify-center">
-                        <span class="scroll-wheel"></span>
-                    </div>
-                </a>
+                <div class="w-8 h-12 rounded-full border border-white/70 flex justify-center">
+                    <span class="scroll-wheel"></span>
+                </div>
 
             </div>
+
+            <script>
+                let redirected = false;
+
+                // Desktop (mouse wheel)
+                window.addEventListener("wheel", function (e) {
+                    if (redirected) return;
+
+                    if (e.deltaY > 30) {
+                        redirected = true;
+
+                        // Small delay for a smoother feel
+                        setTimeout(() => {
+                            window.location.href = "home.html";
+                        }, 300);
+                    }
+                }, { passive: true });
+
+                // Mobile (swipe up)
+                let startY = 0;
+
+                window.addEventListener("touchstart", function (e) {
+                    startY = e.touches[0].clientY;
+                }, { passive: true });
+
+                window.addEventListener("touchend", function (e) {
+                    if (redirected) return;
+
+                    const endY = e.changedTouches[0].clientY;
+
+                    if (startY - endY > 60) {
+                        redirected = true;
+
+                        setTimeout(() => {
+                            window.location.href = "home.html";
+                        }, 300);
+                    }
+                }, { passive: true });
+            </script>
+
+
+
 
 
 

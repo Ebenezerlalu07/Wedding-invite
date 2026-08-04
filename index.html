@@ -48,6 +48,51 @@
                 transform: translateY(8px);
             }
         }
+
+        .scroll-wheel {
+            width: 4px;
+            height: 10px;
+            border-radius: 999px;
+            background: #fff;
+            margin-top: 8px;
+            animation: wheelMove 1.8s ease-in-out infinite;
+        }
+
+        @keyframes wheelMove {
+
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            70% {
+                transform: translateY(14px);
+                opacity: .2;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+        }
+
+        .arrow-down {
+            animation: arrowMove 1.8s ease-in-out infinite;
+        }
+
+        @keyframes arrowMove {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(8px);
+            }
+
+        }
     </style>
 
 </head>
@@ -99,25 +144,23 @@
 
 
 
-            <!-- Mouse Icon -->
-            <div class="mt-5 flex justify-center">
 
-                <div class="w-8 h-12 rounded-full border border-white/70 flex justify-center">
 
-                    <span class="w-1 h-2 rounded-full bg-white mt-2 animate-scroll"></span>
+            <!-- Scroll Indicator -->
+            <div id="scrollDown" class="flex flex-col items-center mt-6 select-none">
 
-                </div>
+                <!-- Mouse -->
+                <a href="/home.html">
+                    <div class="w-8 h-12 rounded-full border border-white/70 flex justify-center">
+                        <span class="scroll-wheel"></span>
+                    </div>
+                </a>
 
             </div>
 
-            <!-- Arrow -->
-            <a href="/home.html">
-                <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mt-3 w-6 h-6 text-white animate-bounce"
-                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7">
 
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
 
-                </svg></a>
+
 
         </div>
 

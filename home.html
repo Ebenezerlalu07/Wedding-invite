@@ -18,7 +18,8 @@
 
 <body>
 
-    
+
+
 
     <section class="relative overflow-hidden ">
 
@@ -470,17 +471,7 @@
         lucide.createIcons();
     </script>
 
-    <!-- ========================================================
-         SCROLL & TEXT REVEAL ENGINE
-         - Splits any [data-reveal-text] element into word or
-           letter spans (mode set via data-reveal-mode) so each
-           piece can animate in with its own stagger delay.
-         - A single IntersectionObserver then adds "in-view" to
-           any .reveal / .reveal-scale / .reveal-grow / .text-reveal
-           / .birds-reveal element as it scrolls into the viewport.
-         - Runs once per element; nothing re-hides on scroll-out,
-           so the page never feels janky on scroll-up.
-         ======================================================== -->
+
     <script>
         (function () {
             function wrapWords(el) {
@@ -565,6 +556,44 @@
 
             revealTargets.forEach((el) => observer.observe(el));
         })();
+    </script>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="/Assets/Goodness of God (Official Lyric Video) - Bethel Music & Jenn Johnson _ Peace.mp3"
+            type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        document.addEventListener("click", function () {
+            const music = document.getElementById("bgMusic");
+            if (music.paused) {
+                music.play().catch(() => { });
+            }
+        }, { once: true });
+    </script>
+
+    <audio id="bgMusic" autoplay loop muted>
+        <source src="/Assets/Goodness of God (Official Lyric Video) - Bethel Music & Jenn Johnson _ Peace.mp3"
+            type="audio/mpeg">
+    </audio>
+
+    <script>
+        document.addEventListener("click", () => {
+            const music = document.getElementById("bgMusic");
+            music.muted = false;
+            music.play().catch(() => { });
+        }, { once: true });
+    </script>
+
+    <audio id="bgMusic" autoplay loop>
+        <source src="/Assets/Goodness of God (Official Lyric Video) - Bethel Music & Jenn Johnson _ Peace.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const music = document.getElementById("bgMusic");
+        music.volume = 0.1; // 15% volume (0.0 to 1.0)
     </script>
 
     <!-- Loader -->

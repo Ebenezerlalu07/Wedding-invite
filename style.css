@@ -274,6 +274,11 @@ section {
     }
 }
 
+.cloud-img {
+    opacity: 0;
+    animation: cloudFadeIn 2s ease forwards;
+}
+
 .animate-cloud-left {
     animation: cloudLeft 18s ease-in-out infinite alternate;
 }
@@ -282,23 +287,22 @@ section {
     animation: cloudRight 22s ease-in-out infinite alternate;
 }
 
-/* Clouds also get a soft entrance drift-in on load, on top of
-   their existing ambient sway. */
-.cloud-img {
-    opacity: 0;
-    animation: cloudFadeIn 2.4s ease-out forwards, cloudLeft 18s ease-in-out infinite alternate;
-    animation-delay: 0.1s, 2.4s;
+.cloud-img,
+.leaf-left,
+.leaf-right,
+.center-leaf,
+.invitation-float,
+.reveal,
+.reveal-scale,
+.reveal-grow,
+.countdown-tick,
+.tap-animation {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
-.cloud-right {
-    animation-name: cloudFadeIn, cloudRight;
-    animation-duration: 2.4s, 22s;
-    animation-timing-function: ease-out, ease-in-out;
-    animation-fill-mode: forwards, none;
-    animation-iteration-count: 1, infinite;
-    animation-direction: normal, alternate;
-    animation-delay: 0.3s, 2.7s;
-}
+
 
 @keyframes cloudFadeIn {
     from {

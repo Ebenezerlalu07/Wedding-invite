@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Stanly &amp; Keziyamol — Wedding Invitation</title>
+    <title>Stanly &amp; Keziyamol - Wedding Invitation</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://use.typekit.net/your-kit-id.css">
@@ -17,6 +17,8 @@
 </head>
 
 <body>
+
+    
 
     <section class="relative overflow-hidden ">
 
@@ -46,7 +48,7 @@
     mt-6 sm:mt-8
     text-reveal" data-reveal-text data-reveal-mode="word">
 
-                "This is the LORD'S doing; <br> it is marvellous in our eyes."
+                "This is the LORD'S doing; <br> it is marvellous in our eyes"
 
             </h2>
 
@@ -117,7 +119,7 @@
                 </h1>
 
                 <p class="caslon italic text-[69774f] fluid-daughter-line mt-8 sm:mt-12 reveal">
-                    daughter of  Pr. Aju Varghese &amp; <br> Mrs. Annamma Aju,
+                    daughter of Pr. Aju Varghese &amp; <br> Mrs. Annamma Aju,
                 </p>
 
                 <p class="caslon italic regular text-[#87a254] fluid-address-line mt-3 sm:mt-4 reveal">
@@ -135,9 +137,10 @@
     <!-- ========================= -->
 
     <section class="w-screen overflow-hidden">
-
-        <img src="/Assets/Full 1.png" alt="Wedding Date & Time"
-            class="block w-full h-auto invitation-float invitation-fade reveal-scale">
+        <a href="https://maps.app.goo.gl/DYDRvxznd5tqwN3A9">
+            <img src="/Assets/Full 1.png" alt="Wedding Date & Time"
+                class="block w-full h-auto invitation-float invitation-fade reveal-scale">
+        </a>
     </section>
 
     <!-- ========================================= -->
@@ -153,19 +156,65 @@
                 class="center-leaf w-16 sm:w-20 md:w-24 lg:w-32 mx-auto reveal-grow" alt="">
 
             <!-- Title -->
-            <h3 class="caslon italic text-[#8B9373] fluid-countdown-title mt-5 sm:mt-6 reveal">
+            <!-- <h3 class="caslon italic text-[#8B9373] fluid-countdown-title mt-5 sm:mt-6 reveal">
                 Counting down to the blessed day
-            </h3>
+            </h3> -->
+            <!-- ================= MOBILE ================= -->
+            <div class="md:hidden mt-10 reveal">
 
-            <!-- Countdown -->
-            <div class="mt-6 sm:mt-8 countdown-pill reveal">
+                <!-- Heading -->
+                <h3 class="caslon italic text-[#7D8665]
+               text-[20px] leading-tight text-center">
+                    Counting down to the <br>
+                    blessed day
+                </h3>
+
+                <div class="mt-8 flex justify-center">
+                    <div class="flex">
+
+                        <div class="px-4 text-center border-r border-[#C5C9B7]">
+                            <h2 id="days-mobile" class="font-vissa text-[#707D54] text-[42px] leading-none">
+                                00
+                            </h2>
+                            <p class="font-avenir text-[#7E8567] text-xs mt-2">Days</p>
+                        </div>
+
+                        <div class="px-4 text-center border-r border-[#C5C9B7]">
+                            <h2 id="hours-mobile" class="caslon text-[#707D54] text-[42px] leading-none">
+                                00
+                            </h2>
+                            <p class="font-avenir text-[#7E8567] text-xs mt-2">Hours</p>
+                        </div>
+
+                        <div class="px-4 text-center border-r border-[#C5C9B7]">
+                            <h2 id="minutes-mobile" class="font-vissa text-[#707D54] text-[42px] leading-none">
+                                00
+                            </h2>
+                            <p class="font-avenir text-[#7E8567] text-xs mt-2">Minutes</p>
+                        </div>
+
+                        <div class="px-4 text-center">
+                            <h2 id="seconds-mobile" class="caslon text-[#707D54] text-[42px] leading-none">
+                                00
+                            </h2>
+                            <p class="font-avenir text-[#7E8567] text-xs mt-2">Seconds</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ================= DESKTOP ================= -->
+            <div class="hidden md:block mt-6 sm:mt-8 countdown-pill reveal">
+
                 <div class="countdown-grid">
 
                     <div>
-                        <h2 id="days" class="font-vissa  text-[#707D54] fluid-countdown-number leading-none">
+                        <h2 id="days" class="font-vissa text-[#707D54] fluid-countdown-number leading-none">
                             00
                         </h2>
-                        <p class="font-avenir  text-[#8B9373] text-[11px] sm:text-[12px] mt-1">
+                        <p class="font-avenir text-[#8B9373] text-[12px] mt-1">
                             Days
                         </p>
                     </div>
@@ -174,16 +223,16 @@
                         <h2 id="hours" class="caslon text-[#707D54] fluid-countdown-number leading-none">
                             00
                         </h2>
-                        <p class="font-avenir  text-[#8B9373] text-[11px] sm:text-[12px] mt-1">
+                        <p class="font-avenir text-[#8B9373] text-[12px] mt-1">
                             Hours
                         </p>
                     </div>
 
                     <div>
-                        <h2 id="minutes" class="font-vissa  text-[#707D54] fluid-countdown-number leading-none">
+                        <h2 id="minutes" class="font-vissa text-[#707D54] fluid-countdown-number leading-none">
                             00
                         </h2>
-                        <p class="font-avenir  text-[#8B9373] text-[11px] sm:text-[12px] mt-1">
+                        <p class="font-avenir text-[#8B9373] text-[12px] mt-1">
                             Minutes
                         </p>
                     </div>
@@ -192,12 +241,13 @@
                         <h2 id="seconds" class="caslon text-[#707D54] fluid-countdown-number leading-none">
                             00
                         </h2>
-                        <p class="font-avenir  text-[#8B9373] text-[11px] sm:text-[12px] mt-1">
+                        <p class="font-avenir text-[#8B9373] text-[12px] mt-1">
                             Seconds
                         </p>
                     </div>
 
                 </div>
+
             </div>
 
 
@@ -347,24 +397,34 @@
     <script>
         // Wedding Date & Time
         const weddingDate = new Date("2026-10-07T10:00:00").getTime();
-        const countdownIds = ["days", "hours", "minutes", "seconds"];
-        const lastCountdownValues = { days: null, hours: null, minutes: null, seconds: null };
 
+        // Store last values for animation
+        const lastCountdownValues = {};
+
+        // Update a single countdown element
         function setCountdownValue(id, value) {
             const el = document.getElementById(id);
+
+            // Skip if element doesn't exist
+            if (!el) return;
+
             const formatted = String(value).padStart(2, "0");
 
             if (lastCountdownValues[id] !== formatted) {
                 el.textContent = formatted;
                 lastCountdownValues[id] = formatted;
 
-                // Tiny "tick" pop whenever a digit actually changes,
-                // most noticeably the seconds column.
+                // Replay tick animation
                 el.classList.remove("countdown-tick");
-                // force reflow so the animation can replay
                 void el.offsetWidth;
                 el.classList.add("countdown-tick");
             }
+        }
+
+        // Update both desktop & mobile
+        function updateAll(id, value) {
+            setCountdownValue(id, value);
+            setCountdownValue(id + "-mobile", value);
         }
 
         function updateCountdown() {
@@ -372,23 +432,36 @@
             const distance = weddingDate - now;
 
             if (distance <= 0) {
-                countdownIds.forEach((id) => setCountdownValue(id, 0));
+                updateAll("days", 0);
+                updateAll("hours", 0);
+                updateAll("minutes", 0);
+                updateAll("seconds", 0);
+
                 clearInterval(countdownInterval);
                 return;
             }
 
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            const hours = Math.floor(
+                (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            );
+            const minutes = Math.floor(
+                (distance % (1000 * 60 * 60)) / (1000 * 60)
+            );
+            const seconds = Math.floor(
+                (distance % (1000 * 60)) / 1000
+            );
 
-            setCountdownValue("days", days);
-            setCountdownValue("hours", hours);
-            setCountdownValue("minutes", minutes);
-            setCountdownValue("seconds", seconds);
+            updateAll("days", days);
+            updateAll("hours", hours);
+            updateAll("minutes", minutes);
+            updateAll("seconds", seconds);
         }
 
+        // Initial update
         updateCountdown();
+
+        // Update every second
         const countdownInterval = setInterval(updateCountdown, 1000);
     </script>
 

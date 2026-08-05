@@ -42,16 +42,19 @@
             <a href="/index.html">
                 <img src="/Assets/Birds.png" alt="Doves" class="w-20 sm:w-28 md:w-36 lg:w-40 mx-auto birds-reveal"></a>
             <!-- Verse -->
-            <h2 class="caslon italic text-[#69774f]
-    text-[14px] sm:text-xl md:text-3xl
-    whitespace-nowrap
-    text-center
-    mt-6 sm:mt-8
-    text-reveal" data-reveal-text data-reveal-mode="word">
+            <div class="text-center mt-6 sm:mt-8">
+                <h1 class="caslon italic text-[#69774f]
+        text-[14px] sm:text-xl md:text-3xl
+        whitespace-nowrap text-reveal" data-reveal-text data-reveal-mode="word">
+                    "This is the LORD'S doing;
+                </h1>
 
-                "This is the LORD'S doing; <br> it is marvellous in our eyes"
-
-            </h2>
+                <h1 class="caslon italic text-[#69774f]
+        text-[14px] sm:text-xl md:text-3xl
+        whitespace-nowrap text-reveal" data-reveal-text data-reveal-mode="word">
+                    it is marvellous in our eyes"
+                </h1>
+            </div>
 
             <p class="caslon italic text-[#98A46F] fluid-verse-ref mt-1.5 sm:mt-4 text-reveal" data-reveal-text
                 data-reveal-mode="word">
@@ -81,18 +84,18 @@
             </div>
 
             <!-- Groom & Bride -->
-            <div class="mt-12 sm:mt-16 md:mt-20 lg:mt-24">
+            <div class="mt-5 sm:mt-16 md:mt-20 lg:mt-24">
                 <h1 class="font-perpetua-light uppercase
     text-[#7D8665]
     text-[42px] sm:text-[56px] md:text-[72px] lg:text-[88px]
-    leading-[1.1]
+    leading-none
     text-center">
 
                     <span class="block text-reveal" data-reveal-text data-reveal-mode="letter">
                         Stanly
                     </span>
 
-                    <span class="block mt-2 text-reveal" data-reveal-text data-reveal-mode="letter">
+                    <span class="block -mt-2 text-reveal" data-reveal-text data-reveal-mode="letter">
                         Johnson
                     </span>
 
@@ -109,19 +112,24 @@
     leading-[1.1]
     text-center">
 
+
+
                     <span class="block text-reveal" data-reveal-text data-reveal-mode="letter">
                         Keziyamol
                     </span>
 
-                    <span class="block mt-2 text-reveal" data-reveal-text data-reveal-mode="letter">
+                    <span class="block -mt-2 text-reveal" data-reveal-text data-reveal-mode="letter">
                         Aju
                     </span>
 
                 </h1>
 
-                <p class="caslon italic text-[69774f] fluid-daughter-line mt-8 sm:mt-12 reveal">
-                    daughter of Pr. Aju Varghese &amp; <br> Mrs. Annamma Aju,
-                </p>
+
+                <div class="mt-12 sm:mt-16 md:mt-20 lg:mt-28 reveal">
+                    <h3 class="caslon italic text-[#7D8665] fluid-parent-name">
+                        Daughter of Pr. Aju Varghese &amp; <br> Mrs. Annamma Aju,
+                    </h3>
+                </div>
 
                 <p class="caslon italic regular text-[#87a254] fluid-address-line mt-3 sm:mt-4 reveal">
                     Puthuparambil Ebenezer, <br> Manganam, Kottayam.
@@ -137,7 +145,7 @@
     <!-- Wedding Date Card -->
     <!-- ========================= -->
 
-    <section class="w-screen overflow-hidden">
+    <section class="text-reveal w-screen overflow-hidden">
         <a href="https://maps.app.goo.gl/DYDRvxznd5tqwN3A9">
             <img src="/Assets/Full 1.png" alt="Wedding Date & Time"
                 class="block w-full h-auto invitation-float invitation-fade reveal-scale">
@@ -283,117 +291,266 @@
                 Kindly confirm your presence
             </p>
 
-            <!-- Buttons -->
             <div
-                class="rsvp-buttons mt-6 sm:mt-8 mx-auto flex w-full max-w-[260px] overflow-hidden rounded-full border border-[#A8B28C] bg-[#E3E5D4] ">
+                class="mt-6 sm:mt-8 mx-auto flex w-full max-w-[320px] overflow-hidden rounded-full border border-[#A8B28C] bg-[#E3E5D4]">
 
                 <!-- Call -->
                 <button onclick="openCallModal()"
-                    class="flex-1 text-center caslon italic text-[#707D54] transition hover:bg-[#D8DDC8]">
+                    class="flex-1 py-3 text-center caslon italic text-[#707D54] hover:bg-[#D8DDC8] transition">
                     Call
                 </button>
 
-                <!-- Call Modal -->
-                <div id="callModal"
-                    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/40 backdrop-blur-sm">
+                <div class="w-px bg-[#A8B28C]"></div>
 
-                    <div class="w-[90%] max-w-[340px] rounded-3xl bg-[#F6F5EF] p-6 shadow-2xl">
+                <!-- RSVP -->
+                <button onclick="openRsvpModal()"
+                    class="flex-1 py-3 text-center caslon italic text-[#707D54] hover:bg-[#D8DDC8] transition">
+                    RSVP
+                </button>
 
-                        <h2 class="caslon text-3xl text-[#707D54] text-center">
-                            Contact
+                <div class="w-px bg-[#A8B28C]"></div>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/919207303166" target="_blank"
+                    class="flex-1 py-3 text-center caslon italic text-[#707D54] hover:bg-[#D8DDC8] transition">
+
+                    WhatsApp
+
+                </a>
+
+            </div>
+
+
+
+            <div id="callModal"
+                class="fixed inset-0 z-50 hidden items-center justify-center bg-black/40 backdrop-blur-sm">
+
+                <div class="w-[90%] max-w-[340px] rounded-3xl bg-[#F6F5EF] p-6 shadow-2xl">
+
+                    <h2 class="caslon text-3xl text-[#707D54] text-center">
+                        Contact
+                    </h2>
+
+                    <p class="font-avenir text-center text-[#98A46F] mt-2 mb-6">
+                        Choose a number to call
+                    </p>
+
+                    <div class="space-y-3">
+
+                        <a href="tel:+919207303166"
+                            class="flex items-center justify-between rounded-full bg-[#707D54] px-5 py-4 text-white">
+
+                            <span>+91 9207303166</span>
+
+                            <i data-lucide="phone-call" class="w-5 h-5"></i>
+
+                        </a>
+
+                        <a href="tel:+919847003933"
+                            class="flex items-center justify-between rounded-full bg-[#707D54] px-5 py-4 text-white">
+
+                            <span>+91 9847003933</span>
+
+                            <i data-lucide="phone-call" class="w-5 h-5"></i>
+
+                        </a>
+
+                    </div>
+
+                    <button onclick="closeCallModal()"
+                        class="mt-6 w-full rounded-full border border-[#707D54] py-3 text-[#707D54]">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div id="rsvpModal"
+                class="fixed inset-0 z-50 hidden items-center justify-center bg-black/40 backdrop-blur-md p-4">
+
+                <div class="relative w-full max-w-md rounded-[30px] bg-[#F6F5EF] shadow-2xl">
+
+                    <button onclick="closeRsvpModal()" class="absolute right-5 top-5">
+
+                        ✕
+
+                    </button>
+
+                    <div class="p-8">
+
+                        <h2 class="caslon text-center text-4xl text-[#707D54]">
+
+                            RSVP
+
                         </h2>
 
-                        <p class="font-avenir text-center text-[#98A46F] mt-2 mb-6">
-                            Choose a number to call
+                        <p class="text-center text-[#98A46F] mt-2">
+
+                            Kindly confirm your attendance
+
                         </p>
 
-                        <div class="space-y-3">
 
-                            <a href="tel:+919207303166"
-                                class="icon-pop flex items-center justify-between rounded-full bg-[#707D54] px-5 py-4 text-white hover:bg-[#5F6B48] transition">
-
-                                <span class="font-avenir">
-                                    +91 9207303166
-                                </span>
-
-                                <i data-lucide="phone-call" class="w-5 h-5"></i>
-
-                            </a>
-
-                            <a href="tel:+919847003933"
-                                class="icon-pop flex items-center justify-between rounded-full bg-[#707D54] px-5 py-4 text-white hover:bg-[#5F6B48] transition">
-
-                                <span class="font-avenir">
-                                    +91 9847003933
-                                </span>
-
-                                <i data-lucide="phone-call" class="w-5 h-5"></i>
-
-                            </a>
-
+                        <div class="mt-8">
+                            <label class="block mb-2">Name</label>
+                            <input id="name" type="text" class="w-full rounded-2xl border px-5 py-3">
                         </div>
 
+                        <div class="mt-5">
+                            <label class="block mb-2">Family Name</label>
+                            <input id="family" type="text" class="w-full rounded-2xl border px-5 py-3">
+                        </div>
 
-                        <button onclick="closeCallModal()"
-                            class="mt-6 w-full rounded-full border border-[#707D54] py-3 text-[#707D54] transition hover:bg-[#E9EBDD]">
+                        <div class="mt-5">
+                            <label class="block mb-2">Number of Guests</label>
+                            <input id="guests" type="number" placeholder="Enter guests"
+                                class="w-full rounded-2xl border px-5 py-3">
+                        </div>
 
-                            Cancel
+                        <div class="grid grid-cols-2 gap-3 mt-8">
 
-                        </button>
+                            <button id="submitBtn" type="button" onclick="submitRSVP(); showToast();"
+                                class="rounded-full bg-[#707D54] py-3 text-white font-medium transition hover:bg-[#5e6b47]">
+                                Confirm
+                            </button>
+
+                            <div id="toast"
+                                class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#707D54] text-white px-6 py-3 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 z-[9999]">
+                                Submitted successfully!
+                            </div>
+
+                            <script>
+                                function showToast() {
+                                    const toast = document.getElementById("toast");
+
+                                    toast.classList.remove("opacity-0");
+                                    toast.classList.add("opacity-100");
+
+                                    setTimeout(() => {
+                                        toast.classList.remove("opacity-100");
+                                        toast.classList.add("opacity-0");
+                                    }, 2500);
+                                }
+                            </script>
+
+
+
+                            <button type="button" onclick="closeRsvpModal()"
+                                class="rounded-full border border-[#707D54] py-3 text-[#707D54] font-medium transition hover:bg-[#707D54] hover:text-white">
+                                Cancel
+                            </button>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-                <script>
-                    function openCallModal() {
-                        const modal = document.getElementById("callModal");
-                        modal.classList.remove("hidden");
-                        modal.classList.add("flex");
-                        document.body.style.overflow = "hidden";
-
-                        // Trigger the staggered icon-pop entrance on each open
-                        // (restart the animation by removing/re-adding the class
-                        // on the next frame, so re-opening the modal replays it).
-                        modal.classList.remove("modal-open");
-                        requestAnimationFrame(() => {
-                            requestAnimationFrame(() => {
-                                modal.classList.add("modal-open");
-                            });
-                        });
-                    }
-
-                    function closeCallModal() {
-                        const modal = document.getElementById("callModal");
-                        modal.classList.remove("flex");
-                        modal.classList.add("hidden");
-                        modal.classList.remove("modal-open");
-
-                        document.body.style.overflow = "auto";
-                    }
-
-                    // Close when clicking outside
-                    document.getElementById("callModal").addEventListener("click", function (e) {
-                        if (e.target === this) {
-                            closeCallModal();
-                        }
-                    });
-                </script>
-
-
-                <!-- Divider -->
-                <div class="w-px bg-[#A8B28C]"></div>
-
-                <!-- WhatsApp -->
-                <a href="https://wa.me/9207303166" target="_blank" rel="noopener"
-                    class="flex-1 text-center caslon italic text-[#707D54] transition hover:bg-[#D8DDC8]">
-                    WhatsApp
-                </a>
 
             </div>
 
+
+
         </div>
     </section>
+
+
+
+
+
+    <script>function openCallModal() {
+            document.getElementById("callModal").classList.remove("hidden");
+            document.getElementById("callModal").classList.add("flex");
+        }
+
+        function closeCallModal() {
+            document.getElementById("callModal").classList.add("hidden");
+            document.getElementById("callModal").classList.remove("flex");
+        }</script>
+
+
+    <script>function openRsvpModal() {
+            document.getElementById("rsvpModal").classList.remove("hidden");
+            document.getElementById("rsvpModal").classList.add("flex");
+        }
+
+        function closeRsvpModal() {
+            document.getElementById("rsvpModal").classList.add("hidden");
+            document.getElementById("rsvpModal").classList.remove("flex");
+        }</script>
+
+
+
+
+
+
+
+    <script>
+
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbypuF_rWNSXf9qnmY1-wXoEYaYhDYpuFKWfkdQeq6TX_bBZWnh4hOb_6tGt4NiR1kxBrA/exec";
+
+        function submitRSVP() {
+
+            const name = document.getElementById("name").value;
+            const family = document.getElementById("family").value;
+            const guests = document.getElementById("guests").value;
+
+            if (!name || !family || !guests) {
+                alert("Please fill all fields");
+                return;
+            }
+
+            fetch(SCRIPT_URL, {
+
+                method: "POST",
+
+                body: JSON.stringify({
+                    name: name,
+                    family: family,
+                    guests: guests
+                })
+
+            })
+
+                .then(res => res.json())
+
+                .then(data => {
+
+                    if (data.status == "success") {
+
+
+
+                        document.getElementById("name").value = "";
+                        document.getElementById("family").value = "";
+                        document.getElementById("guests").value = "";
+
+                        closeRsvpModal();
+
+                    } else {
+
+                        alert("Submission Failed");
+
+                    }
+
+                })
+
+                .catch(error => {
+
+                    console.log(error);
+
+                    alert("Unable to connect");
+
+                });
+
+        }
+
+    </script>
+
+
 
     <script>
         // Wedding Date & Time
@@ -587,42 +744,28 @@
         }, { once: true });
     </script>
 
+
+
     <audio id="bgMusic" autoplay loop>
-        <source src="/Assets/Goodness of God (Official Lyric Video) - Bethel Music & Jenn Johnson _ Peace.mp3" type="audio/mpeg">
+        <source src="/Assets/Goodness of God (Official Lyric Video) - Bethel Music & Jenn Johnson _ Peace.mp3"
+            type="audio/mpeg">
     </audio>
 
     <script>
         const music = document.getElementById("bgMusic");
-        music.volume = 0.1; // 15% volume (0.0 to 1.0)
+
+        music.addEventListener("loadedmetadata", () => {
+            music.volume = 0.01; // 3% volume
+        });
+
+        music.play().then(() => {
+            music.volume = 0.01;
+        }).catch(() => { });
     </script>
 
-    <!-- Loader -->
-    <!-- <div id="loader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-[#F6F5EF]">
 
-        <div class="text-center">
 
-       
-            <img src="/Assets/Birds.png" alt="Loading" class="w-20 mx-auto loader-image">
 
-            <p class="mt-6 font-caslon italic text-[#707D54] text-xl tracking-wide">
-                Loading...
-            </p>
-
-        </div>
-
-    </div>
-
-    <script>
-        window.addEventListener("load", () => {
-
-            setTimeout(() => {
-
-                document.getElementById("loader").classList.add("hide");
-
-            }, 1200);
-
-        });
-    </script> -->
 
 </body>
 

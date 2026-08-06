@@ -776,81 +776,73 @@ section {
 
 
 
-/* Heart */
+/* =========================
+   Wedding Loader
+========================= */
 
-.heart-loader {
-
-    position: relative;
-
-    width: 70px;
-    height: 70px;
-
-    margin: auto;
-
-    transform: rotate(-45deg);
-
-    background: #707D54;
-
-    animation: heartbeat 1.4s ease-in-out infinite;
-
-    box-shadow: 0 0 25px rgba(112, 125, 84, .35);
-
+#loader {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F6F5EF;
+    z-index: 99999;
+    transition: opacity .6s ease, visibility .6s ease;
 }
 
-.heart-loader::before,
-.heart-loader::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 70px;
-    height: 70px;
-
-    border-radius: 50%;
-
-    background: #707D54;
-
+.loader-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(120px, 22vw, 220px);
 }
 
-.heart-loader::before {
-
-    top: -35px;
-    left: 0;
-
+.couple-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+    animation: float 2.8s ease-in-out infinite;
+    will-change: transform;
 }
 
-.heart-loader::after {
+/* Floating Animation */
+@keyframes float {
 
-    left: 35px;
-    top: 0;
-
-}
-
-@keyframes heartbeat {
-
-    0% {
-        transform: rotate(-45deg) scale(1);
-    }
-
-    15% {
-        transform: rotate(-45deg) scale(1.12);
-    }
-
-    30% {
-        transform: rotate(-45deg) scale(1);
-    }
-
-    45% {
-        transform: rotate(-45deg) scale(1.12);
-    }
-
-    60% {
-        transform: rotate(-45deg) scale(1);
-    }
-
+    0%,
     100% {
-        transform: rotate(-45deg) scale(1);
+        transform: translateY(0);
     }
 
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Tablets */
+@media (max-width:768px) {
+    .loader-wrapper {
+        width: 140px;
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-7px);
+        }
+    }
+}
+
+/* Small Phones */
+@media (max-width:480px) {
+    .loader-wrapper {
+        width: 110px;
+    }
 }

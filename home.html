@@ -47,9 +47,9 @@
             <!-- Invitation -->
             <div class="mt-1 sm:mt-16 md:mt-20 lg:mt-24 reveal">
                 <p class="caslon italic text-[#7D8665] fluid-invite-copy leading-relaxed">
-                  "This is the LORD'S doing;
+                    "This is the LORD'S doing;
                     <br>
-                      it is marvellous in our eyes"
+                    it is marvellous in our eyes"
                 </p>
             </div>
 
@@ -759,7 +759,24 @@
 
 
 
+    <div id="loader">
+        <div class="loader-wrapper">
 
+            <img src="Assets/Birds.png" alt="Bride & Groom" class="couple-img">
+
+
+        </div>
+
+    </div>
+
+    <script>window.addEventListener("load", () => {
+            const loader = document.getElementById("loader");
+
+            loader.style.transition = "opacity .8s ease";
+            loader.style.opacity = "0";
+
+            setTimeout(() => loader.remove(), 800);
+        });</script>
 
 </body>
 

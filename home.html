@@ -787,23 +787,41 @@
         })();
     </script>
 
-    <audio id="bgMusic" autoplay loop preload="auto">
-        <source src="/Assets/Goodness of God (Official Lyric Video) - Bethel Music & Jenn Johnson _ Peace.mp3"
-            type="audio/mpeg">
+    <audio id="bgMusic" loop preload="auto" playsinline>
+        <source src="/Assets/music.mp3" type="audio/mpeg">
     </audio>
 
     <script>
-        window.addEventListener("load", async () => {
-            const music = document.getElementById("bgMusic");
-            music.volume = 0.05;
+        const music = document.getElementById("bgMusic");
+        music.volume = 0.05;
+
+        let started = false;
+
+        async function startMusic() {
+            if (started) return;
 
             try {
                 await music.play();
-                console.log("Music started");
-            } catch (err) {
-                console.log("Autoplay blocked:", err);
+                started = true;
+
+                // Remove listeners after successful play
+                document.removeEventListener("click", startMusic);
+                document.removeEventListener("touchstart", startMusic);
+                document.removeEventListener("pointerdown", startMusic);
+
+                console.log("Music playing");
+            } catch (e) {
+                console.log("Playback blocked", e);
             }
-        });
+        }
+
+        // Try autoplay
+        window.addEventListener("load", startMusic);
+
+        // Fallback for all devices
+        document.addEventListener("click", startMusic);
+        document.addEventListener("touchstart", startMusic, { passive: true });
+        document.addEventListener("pointerdown", startMusic);
     </script>
 
 

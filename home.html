@@ -818,22 +818,45 @@
         })();
     </script>
 
-    <audio id="bgMusic" autoplay loop preload="auto">
+    <audio id="bgMusic" loop preload="auto" playsinline webkit-playsinline>
         <source src="/Assets/music.mp3" type="audio/mpeg">
     </audio>
 
     <script>
-        window.addEventListener("load", async () => {
+        (() => {
             const music = document.getElementById("bgMusic");
             music.volume = 0.05;
 
-            try {
-                await music.play();
-                console.log("Music started");
-            } catch (err) {
-                console.log("Autoplay blocked:", err);
+            let started = false;
+
+            async function playMusic() {
+                if (started) return;
+
+                try {
+                    await music.play();
+                    started = true;
+
+                    document.removeEventListener("click", playMusic);
+                    document.removeEventListener("touchstart", playMusic);
+                    document.removeEventListener("pointerdown", playMusic);
+                    document.removeEventListener("keydown", playMusic);
+
+                    console.log("Music playing");
+                } catch (e) {
+                    // Browser blocked autoplay
+                }
             }
-        });
+
+            // Try immediately
+            window.addEventListener("DOMContentLoaded", playMusic);
+            window.addEventListener("load", playMusic);
+
+            // Fallback after first user interaction
+            document.addEventListener("click", playMusic, { passive: true });
+            document.addEventListener("touchstart", playMusic, { passive: true });
+            document.addEventListener("pointerdown", playMusic, { passive: true });
+            document.addEventListener("keydown", playMusic);
+        })();
     </script>
 
 

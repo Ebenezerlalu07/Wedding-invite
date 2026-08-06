@@ -180,16 +180,16 @@
                     }
 
                     .name-wrapper::before {
-                        content: "❤";
+                        content: "\2764\FE0E";
+                        /* ❤ text version */
+                        color: #c0cdaa;
+                        font-size: 18px;
                         position: absolute;
                         top: 50%;
                         left: 50%;
                         font-size: 18px;
                         color: #c0cdaa;
-
-                        text-shadow:
-                            0 0 6px rgba(192, 205, 170, 0.6),
-                            0 0 12px rgba(192, 205, 170, 0.4);
+                        text-shadow: 0 0 10px rgba(#b2baa5);
 
                         animation: heartOrbit 8s linear infinite,
                             heartbeat 1s ease-in-out infinite;

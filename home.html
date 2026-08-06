@@ -16,12 +16,13 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body>
+<body class="home">
 
 
 
+    </script>
 
-    <section class="relative overflow-hidden ">
+    <section class="relative overflow-hidden">
 
         <!-- Left Cloud -->
         <img src="/Assets/Fluffy Clouds left.png" class="cloud-img cloud-left animate-cloud-left" alt="">
@@ -61,17 +62,19 @@
             <!-- Parents -->
             <div class="mt-12 sm:mt-16 md:mt-20 lg:mt-28 reveal">
                 <h3 class="caslon italic text-[#7D8665] fluid-parent-name">
-                    Pr. Johnson B. <br> Mrs. Baby Johnson
+                    Pr. Johnson B. &<br> Mrs. Baby Johnson
                 </h3>
 
-                <p class="caslon italic text-[#98A46F] fluid-parent-address mt-2">
+                <p
+                    class="caslon italic text-[#98A46F] fluid-parent-address text-[17px] sm:text-[18px] md:text-[19px] mt-2">
                     Shalom Bhavan, Edakkadu, <br> Poruvazhy, Kollam
                 </p>
             </div>
 
             <!-- Invitation -->
             <div class="mt-12 sm:mt-16 md:mt-20 lg:mt-24 reveal">
-                <p class="caslon italic text-[#7D8665] fluid-invite-copy leading-relaxed">
+                <p
+                    class="caslon italic text-[#7D8665] text-[17px] sm:text-[19px] md:text-[21px] lg:text-[23px] leading-relaxed">
                     Cordially invite your esteemed presence
                     <br>
                     with family to grace the auspicious occasion
@@ -124,11 +127,12 @@
 
                 <div class="mt-12 sm:mt-16 md:mt-20 lg:mt-28 reveal">
                     <h3 class="caslon italic text-[#7D8665] fluid-parent-name">
-                        Daughter of Pr. Aju Varghese &amp; <br> Mrs. Annamma Aju,
+                        Daughter of <br> Pr. Aju Varghese &amp; <br> Mrs. Annamma Aju,
                     </h3>
                 </div>
 
-                <p class="caslon italic regular text-[#87a254] fluid-address-line mt-3 sm:mt-4 reveal">
+                <p
+                    class="caslon italic text-[#98A46F] fluid-parent-address text-[17px] sm:text-[18px] md:text-[19px] mt-2">
                     Puthuparambil Ebenezer, <br> Manganam, Kottayam.
                 </p>
             </div>
@@ -302,13 +306,14 @@
                 <!-- RSVP -->
                 <button onclick="openRsvpModal()"
                     class="flex-1 py-3 text-center caslon italic text-[#707D54] hover:bg-[#D8DDC8] transition">
-                    RSVP
+                    Message
                 </button>
 
                 <div class="w-px bg-[#A8B28C]"></div>
 
                 <!-- WhatsApp -->
-                <a href="https://wa.me/919207303166" target="_blank"
+                <a href="https://wa.me/919207303166?text=We%20received%20your%20gracious%20invitation%20with%20great%20joy.%20Thank%20you%20for%20thinking%20of%20us.%20May%20the%20Lord%20bless%20this%20union%20abundantly.%20We%E2%80%99ll%20be%20praying%20for%20Stanly%20and%20Keziyamol%20on%20their%20special%20day."
+                    target="_blank"
                     class="flex-1 py-3 text-center caslon italic text-[#707D54] hover:bg-[#D8DDC8] transition">
 
                     WhatsApp
@@ -381,7 +386,7 @@
 
                         <h2 class="caslon text-center text-4xl text-[#707D54]">
 
-                            RSVP
+                            Message
 
                         </h2>
 
@@ -394,12 +399,13 @@
 
                         <div class="mt-8">
                             <label class="block mb-2">Name</label>
-                            <input id="name" type="text" class="w-full rounded-2xl border px-5 py-3">
+                            <input id="name" type="text" placeholder="Enter your full name"
+                                class="w-full rounded-2xl border px-5 py-3 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#707D54]">
                         </div>
-
                         <div class="mt-5">
                             <label class="block mb-2">Family Name</label>
-                            <input id="family" type="text" class="w-full rounded-2xl border px-5 py-3">
+                            <input id="family" type="text" placeholder="Enter your family name"
+                                class="w-full rounded-2xl border px-5 py-3 placeholder:text-gray-400">
                         </div>
 
                         <div class="mt-5">
@@ -712,71 +718,85 @@
         })();
     </script>
 
-
+    <audio id="bgMusic" autoplay loop preload="auto">
+        <source src="/Assets/Goodness of God (Official Lyric Video) - Bethel Music & Jenn Johnson _ Peace.mp3"
+            type="audio/mpeg">
+    </audio>
 
     <script>
-        document.addEventListener("click", function () {
+        window.addEventListener("load", async () => {
             const music = document.getElementById("bgMusic");
-            if (music.paused) {
-                music.play().catch(() => { });
+            music.volume = 0.05;
+
+            try {
+                await music.play();
+                console.log("Music started");
+            } catch (err) {
+                console.log("Autoplay blocked:", err);
             }
-        }, { once: true });
-    </script>
-
-    <audio id="bgMusic" autoplay loop muted>
-        <source src="/Assets/Goodness of God (Official Lyric Video) - Bethel Music & Jenn Johnson _ Peace.mp3"
-            type="audio/mpeg">
-    </audio>
-
-
-    <audio id="bgMusic" autoplay loop>
-        <source src="/Assets/Goodness of God (Official Lyric Video) - Bethel Music & Jenn Johnson _ Peace.mp3"
-            type="audio/mpeg">
-    </audio>
-
-    <script>
-        document.addEventListener("click", () => {
-            const music = document.getElementById("bgMusic");
-            music.muted = false;
-            music.play().catch(() => { });
-        }, { once: true });
-    </script>
-
-
-
-
-    <script>
-        const music = document.getElementById("bgMusic");
-
-        music.addEventListener("loadedmetadata", () => {
-            music.volume = 0.01; // 3% volume
         });
-
-        music.play().then(() => {
-            music.volume = 0.01;
-        }).catch(() => { });
     </script>
 
 
 
     <div id="loader">
-        <div class="loader-wrapper">
-
-            <img src="Assets/Birds.png" alt="Bride & Groom" class="couple-img">
-
-
-        </div>
-
+        <div class="spinner"></div>
     </div>
 
-    <script>window.addEventListener("load", () => {
+    <style>
+        body.loaded {
+            overflow: auto;
+        }
+
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: #F6F5EF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999999;
+            transition: opacity .8s ease;
+        }
+
+        #loader.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner {
+            width: 45px;
+            height: 45px;
+            border: 4px solid #d8d8d8;
+            border-top: 4px solid #6F7752;
+            border-radius: 50%;
+            animation: spin .8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+
+    <script>
+        window.onload = function () {
             const loader = document.getElementById("loader");
 
-            loader.style.transition = "opacity .8s ease";
-            loader.style.opacity = "0";
+            // Small delay to prevent flashing
+            setTimeout(() => {
+                loader.classList.add("hide");
+                document.body.classList.add("loaded");
 
-            setTimeout(() => loader.remove(), 800);
-        });</script>
+                setTimeout(() => {
+                    loader.remove();
+                }, 800);
+            }, 500);
+        };
+    </script>
+
 
 </body>
 

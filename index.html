@@ -98,7 +98,7 @@
         <div id="tapOpen"
             class="absolute bottom-12 sm:bottom-16 md:bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center cursor-pointer">
 
-            <img src="/Assets/tap.png" class="w-6 sm:w-7 md:w-8 tap-animation" alt="Tap">
+            <img src="/Assets/tap.png" class="tap-animation w-6 sm:w-7 md:w-8" alt="Tap">
 
             <p class="font-avenir text-[#6F7752] text-sm sm:text-base md:text-lg mt-2">
                 Tap to Open
@@ -115,91 +115,46 @@
                 margin: 1rem 0;
             }
 
+            /* Tap Animation */
             .tap-animation {
                 display: block;
-                will-change: transform;
-                backface-visibility: hidden;
                 transform: translateZ(0);
-                animation: tapFloat 1.8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-            }
-
-            @keyframes tapFloat {
-                0% {
-                    transform: translate3d(0, 0, 0);
-                }
-
-                50% {
-                    transform: translate3d(0, -12px, 0);
-                }
-
-                100% {
-                    transform: translate3d(0, 0, 0);
-                }
+                will-change: transform, opacity;
+                animation: tapFloat 2s ease-in-out infinite;
             }
 
             #tapOpen p {
-                animation: textFloat 1.8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
                 will-change: transform;
-            }
-
-            @keyframes textFloat {
-                0% {
-                    transform: translateY(0);
-                }
-
-                50% {
-                    transform: translateY(-4px);
-                }
-
-                100% {
-                    transform: translateY(0);
-                }
-            }
-
-            .tap-animation {
-                animation: tapFloat 2.2s ease-in-out infinite;
-                will-change: transform;
-                transform: translateZ(0);
+                animation: textFloat 2s ease-in-out infinite;
             }
 
             @keyframes tapFloat {
 
                 0%,
                 100% {
-                    transform: translate3d(0, 0, 0);
-                }
-
-                25% {
-                    transform: translate3d(0, -4px, 0);
-                }
-
-                50% {
-                    transform: translate3d(0, -10px, 0);
-                }
-
-                75% {
-                    transform: translate3d(0, -4px, 0);
-                }
-            }
-
-            @keyframes tapFloat {
-                0% {
                     transform: translateY(0) scale(1);
                     opacity: 1;
                 }
 
                 50% {
                     transform: translateY(-10px) scale(1.08);
-                    opacity: 0.8;
-                }
-
-                100% {
-                    transform: translateY(0) scale(1);
-                    opacity: 1;
+                    opacity: .8;
                 }
             }
 
+            @keyframes textFloat {
 
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+
+                50% {
+                    transform: translateY(-4px);
+                }
+            }
+
+            /* Tap Hide */
             #tapOpen {
                 transition: opacity .3s ease;
             }
@@ -209,9 +164,15 @@
                 pointer-events: none;
             }
 
+            /* Splash Screen */
             #splashScreen {
+                position: fixed;
+                inset: 0;
+                background: #F6F5EF;
+                z-index: 9999;
+                overflow: hidden;
                 transform: translateY(0);
-                transition: transform 1s ease-in-out;
+                transition: transform .9s cubic-bezier(.65, .05, .36, 1);
                 will-change: transform;
             }
 
@@ -242,6 +203,95 @@
                 }, 900);
             });
         </script>
+
+
+
+
+        <!-- Loader -->
+        <div id="loader">
+            <div class="spinner"></div>
+        </div>
+
+        <!-- Page Content -->
+        <div id="pageContent" class="hidden-content">
+            <!-- Everything on your page goes here -->
+        </div>
+
+
+        <style>
+
+            body.loaded {
+                overflow: auto;
+            }
+
+            #loader {
+                position: fixed;
+                inset: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 999999;
+                transition: opacity .1s ease;
+            }
+
+            #loader.hide {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            /* Hide page until loader finishes */
+            .hidden-content {
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity .6s ease;
+            }
+
+            .hidden-content.show {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .spinner {
+                width: 45px;
+                height: 45px;
+                border: 4px solid #d8d8d8;
+                border-top: 4px solid #6F7752;
+                border-radius: 50%;
+                animation: spin .8s linear infinite;
+            }
+
+            @keyframes spin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+
+
+        <script>window.addEventListener("load", () => {
+                const loader = document.getElementById("loader");
+                const page = document.getElementById("pageContent");
+
+                // Wait a little to ensure everything is painted
+                setTimeout(() => {
+
+                    // Show page
+                    page.classList.add("show");
+                    document.body.classList.add("loaded");
+
+                    // Fade loader
+                    loader.classList.add("hide");
+
+                    // Remove loader after fade
+                    loader.addEventListener("transitionend", () => {
+                        loader.remove();
+                    }, { once: true });
+
+                }, 500);
+            });</script>
+
+
+
 
 </body>
 
